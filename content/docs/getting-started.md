@@ -1,0 +1,38 @@
+---
+title: "Getting started"
+weight: 1
+description: >
+  This page tells you how to get started with the Compose theme.
+---
+
+
+## Introduction
+
+LeakIX is the first platform combining a search engine indexing public information AND an open reporting platform linked to the results.
+
+## Scopes
+
+The search engine is divided in two searchable scopes :
+
+### Services
+
+The service scope is an index of everything we have scanned over the last year. It includes IPs and virtualhost.
+
+We keep various information like the TCP or HTTP banner.
+
+### Leak
+
+In this scope we index mis-configurations and vulnerabilities discovered during our service scans.
+
+A leak can be :
+
+- A well known identified vulnerability
+- An infrastructure misconfiguration including but not limited to :
+  - Status and monitoring pages containing sensitive information
+  - Public configuration files containing sensitive information
+  - Misconfigured ACL leaving services that should be protected exposed publicly
+
+{{< tip "warning" >}}
+Due to the sensitive nature of the information we index, access to critical leaks is reserved to trusted users and [commercial plans](https://leakix.net/plans).
+{{< /tip >}}
+
