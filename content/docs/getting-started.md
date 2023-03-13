@@ -12,7 +12,7 @@ LeakIX is the first platform combining a search engine indexing public informati
 
 ## Scopes
 
-The search engine is divided in two searchable scopes :
+The search engine is divided in two searchable scopes:
 
 ### Services
 
@@ -24,10 +24,10 @@ We keep various information like the TCP or HTTP banner.
 
 In this scope we index mis-configurations and vulnerabilities discovered during our service scans.
 
-A leak can be :
+A leak can be:
 
 - A well known identified vulnerability
-- An infrastructure misconfiguration including but not limited to :
+- An infrastructure misconfiguration including but not limited to:
   - Status and monitoring pages containing sensitive information
   - Public configuration files containing sensitive information
   - Misconfigured ACL leaving services that should be protected exposed publicly
@@ -36,3 +36,8 @@ A leak can be :
 Due to the sensitive nature of the information we index, access to critical leaks is reserved to trusted users and [commercial plans](https://leakix.net/plans).
 {{< /tip >}}
 
+### Clients
+
+We provide and support two official clients: Python and Go.
+- Go: https://github.com/LeakIX/LeakIXClient
+- Python client: https://github.com/LeakIX/LeakIXClient-Python
