@@ -53,7 +53,7 @@ Country is case sensitive.
 
 ```sql
 +ssl.certificate.issuer_name:"FortiGate"
-    
+
 ```
 
 [Search](https://leakix.net/search?scope=service&q=ssl.certificate.cn%3A%22co.uk%22+ssl.certificate.domain%3A%22co.uk%22) for results with `co.uk` as TLD in SSL Common Names or domains.
@@ -71,5 +71,5 @@ ssl.certificate.cn:"co.uk" ssl.certificate.domain:"co.uk"
 ```
 
 {{< tip "warning" >}}
-Do you have dorks to share ? Feel free to open a [PR](https://github.com/LeakIX/DocSite/pulls) or raise an [issue](https://github.com/LeakIX/DocSite/issues/new/choose "Open a Github Issue")(s).
+Do you have dorks to share? Feel free to open a [PR](https://github.com/LeakIX/DocSite/pulls) or raise an [issue](https://github.com/LeakIX/DocSite/issues/new/choose "Open a Github Issue")(s).
 {{< /tip >}}
