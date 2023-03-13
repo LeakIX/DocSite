@@ -2,7 +2,7 @@
 title: "Syntax"
 weight: 2
 description: >
-  This page tells you how to get started with the Compose theme.
+  LeakIX query syntax.
 ---
 
 

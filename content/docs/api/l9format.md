@@ -2,7 +2,7 @@
 title: "l9format"
 weight: 2
 description: >
-  This page tells you how to get started with the Compose theme.
+  l9format documentation.
 ---
 
 l9format is a schema declaration targeted at interoperability between network recon tools used at LeakIX. 

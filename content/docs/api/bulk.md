@@ -2,7 +2,7 @@
 title: "Bulk"
 weight: 6
 description: >
-  This page tells you how to get started with the Compose theme.
+  Bulk API endpoint documentation.
 ---
 
 Bulk search can be used when requesting a bigger volume of events and avoid paging.

@@ -2,7 +2,7 @@
 title: "Host details"
 weight: 4
 description: >
-  This page tells you how to get started with the Compose theme.
+  Host details API endpoint documentation.
 ---
 
 

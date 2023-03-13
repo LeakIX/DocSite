@@ -1,7 +1,7 @@
 ---
 title: "Reporting with CristiVlad"
 weight: 8
-description: "Video tutorial."
+description: "Reporting with LeakIX, a video tutorial."
 ---
 
 Check out this 10 minutes awesome LeakIX reporting tutorial by [Cristi](https://twitter.com/CristiVlad25/) :

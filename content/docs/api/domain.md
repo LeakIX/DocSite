@@ -2,7 +2,7 @@
 title: "Domain details"
 weight: 5
 description: >
-  This page tells you how to get started with the Compose theme.
+  Domain API endpoint documentation.
 ---
 
 

@@ -2,7 +2,7 @@
 title: "Fields"
 weight: 3
 description: >
-  This page tells you how to get started with the Compose theme.
+  LeakIX fields documentation.
 ---
 
 LeakIX syntax is called YQL and is based on the opensource [YQL-Elastic](https://github.com/LeakIX/yql-elastic) library.
