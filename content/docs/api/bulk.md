@@ -1,6 +1,6 @@
 ---
 title: "Bulk"
-weight: 6
+weight: 7
 description: >
   Bulk API endpoint documentation.
 ---

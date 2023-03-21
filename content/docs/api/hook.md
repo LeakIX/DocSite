@@ -1,6 +1,6 @@
 ---
 title: "Hooks"
-weight: 7
+weight: 8
 description: >
   Receiving hooks
 ---
