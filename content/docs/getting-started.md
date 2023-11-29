@@ -8,7 +8,7 @@ description: >
 
 ## Introduction
 
-LeakIX is the first platform combining a search engine indexing public information AND an open reporting platform linked to the results.
+LeakIX (/liːk aɪ eks/) is the first platform combining a search engine indexing public information AND an open reporting platform linked to the results.
 
 ## Scopes
 
