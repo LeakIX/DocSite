@@ -13,7 +13,7 @@ columnTitles = ["Section", "Status", "Author"]
 
 # Welcome to LeakIX documentation.
 
-LeakIX is a red-team search engine indexing mis-configurations and vulnerabilities online.
+LeakIX (/liːk aɪ eks/) is a red-team search engine indexing mis-configurations and vulnerabilities online.
 
 This website contains documentation on how to use the engine and its features.
 
