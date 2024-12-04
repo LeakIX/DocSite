@@ -70,6 +70,14 @@ ssl.certificate.cn:"co.uk" ssl.certificate.domain:"co.uk"
 +(ssl.certificate.cn:"co.uk" ssl.certificate.domain:"co.uk") +creation_date:>2023-01-01
 ```
 
+## Leaked GitHub tokens
+
+[Search](https://leakix.net/search?scope=leak&q=%2Bevents.leak.severity%3A%22critical%22+%2Bplugin%3A%22GitConfigHttpPlugin%22+%2B%22github.com%22) for results with exposed git config with `critical` severity and with `github.com` present in their text.
+
+```sql
++events.leak.severity:"critical" +plugin:"GitConfigHttpPlugin" +"github.com"
+```
+
 {{< tip "warning" >}}
 Do you have dorks to share? Feel free to open a [PR](https://github.com/LeakIX/DocSite/pulls) or raise an [issue](https://github.com/LeakIX/DocSite/issues/new/choose "Open a Github Issue")(s).
 {{< /tip >}}
