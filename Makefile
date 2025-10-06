@@ -59,7 +59,7 @@ check-trailing-whitespace: ## Check for trailing whitespace in all files
 
 build: ## Build the Hugo site
 	@echo "Building Hugo site..."
-	@hugo --gc --minify
+	@hugo --gc --minify $(if $(BASEURL),--baseURL "$(BASEURL)") $(if $(CACHEDIR),--cacheDir "$(CACHEDIR)")
 	@echo "✓ Build complete!"
 
 serve: ## Serve the site locally
