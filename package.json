@@ -1,0 +1,25 @@
+{
+  "name": "leakix-docsite",
+  "version": "1.0.0",
+  "description": "LeakIX Documentation Site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeakIX/DocSite"
+  },
+  "keywords": [
+    "hugo",
+    "documentation",
+    "leakix"
+  ],
+  "author": "LeakIX Team",
+  "license": "MIT",
+  "scripts": {
+    "prettify": "make prettify",
+    "check-prettify": "make check-prettify",
+    "test": "make test"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "prettier-plugin-go-template": "^0.0.15"
+  }
+}

@@ -1,0 +1,14 @@
+node_modules/
+public/
+resources/
+exampleSite/public/
+exampleSite/resources/
+*.min.css
+*.min.js
+vendor/
+.git/
+.hugo_build.lock
+go.sum
+package-lock.json
+*.toml
+exampleSite/config.toml
