@@ -1,5 +1,5 @@
 module compose-exampleSite
 
-go 1.24
+go 1.25
 
-require github.com/onweru/compose v0.0.0-20250714145138-0419b4c89f33 // indirect
+require github.com/LeakIX/hugo-leakix-dark v0.0.0-20251006205816-5eb82044a59b // indirect

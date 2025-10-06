@@ -7,14 +7,15 @@ code in this repository.
 
 This is the documentation site for LeakIX, a red-team search engine indexing
 mis-configurations and vulnerabilities online. The site is built with Hugo
-v0.151.0+ (requires Go 1.24+) using the Compose theme and is hosted on GitHub
-Pages at https://docs.leakix.net/.
+v0.151.0+ (requires Go 1.25+) using the LeakIX Dark theme and is hosted on
+GitHub Pages at https://docs.leakix.net/.
 
 ## Architecture
 
 **Hugo Module System**: The project uses Hugo modules (not traditional themes)
-to load the Compose theme from `github.com/onweru/compose`. The theme is defined
-in `go.mod` as a dependency and loaded via Hugo's module system.
+to load the LeakIX Dark theme from `github.com/LeakIX/hugo-leakix-dark`. The
+theme is defined in `go.mod` as a dependency and loaded via Hugo's module
+system.
 
 **Content Structure**:
 
@@ -72,8 +73,10 @@ make help                          # Show all available targets
 
 - All content pages use frontmatter with `title`, `weight`, and optional
   `description`
-- The site uses custom Hugo shortcodes extensively (e.g., `{{< button >}}`,
-  `{{< tip >}}`, `{{< block "grid-2" >}}`)
+- The site uses custom Hugo shortcodes extensively:
+  - `{{< tip >}}` or `{{< tip "warning" >}}` - Info/warning boxes
+  - `{{< button "path" "text" >}}` - Styled button links
+  - `{{< block "grid-2" >}}` with `{{< column >}}` - Responsive grid layouts
 - Images are stored in `static/images/`
 - Search is enabled but limited to specific sections defined in `docSections`
   parameter
