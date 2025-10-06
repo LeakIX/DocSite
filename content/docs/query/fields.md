@@ -1,29 +1,32 @@
 ---
-title: "Fields"
+title: 'Fields'
 weight: 3
 description: >
   LeakIX fields documentation.
 ---
 
-LeakIX syntax is called YQL and is based on the opensource [YQL-Elastic](https://github.com/LeakIX/yql-elastic) library.
+LeakIX syntax is called YQL and is based on the opensource
+[YQL-Elastic](https://github.com/LeakIX/yql-elastic) library.
 
 ## Types
 
-| type    | description                                                                  |
-|---------|------------------------------------------------------------------------------|
-| text    | Text is fuzzy and case insensitive                                           |
-| keyword | Keyword is precise and case sensitive                                        |
-| ip      | IP is precise and can be a CIDR range                                        |
-| dns     | DNS will be matched from top domain (eg, `leakix.net` includes *.leakix.net) |
-| integer | Numbers can be used in range queries                                         |
-| date    | Date can be used in range queries                                            |
+| type    | description                                                                   |
+| ------- | ----------------------------------------------------------------------------- |
+| text    | Text is fuzzy and case insensitive                                            |
+| keyword | Keyword is precise and case sensitive                                         |
+| ip      | IP is precise and can be a CIDR range                                         |
+| dns     | DNS will be matched from top domain (eg, `leakix.net` includes \*.leakix.net) |
+| integer | Numbers can be used in range queries                                          |
+| date    | Date can be used in range queries                                             |
 
 ## Global fields
 
-Global fields are available in both the [service](/docs/getting-started/#service) and [leak](/docs/getting-started/#leak) scope
+Global fields are available in both the
+[service](/docs/getting-started/#service) and
+[leak](/docs/getting-started/#leak) scope
 
 | Field                            | Type    | Description                        | Example                     |
-|----------------------------------|---------|------------------------------------|-----------------------------|
+| -------------------------------- | ------- | ---------------------------------- | --------------------------- |
 | plugin                           | keyword | Plugin name                        | `GitConfigPlugin`           |
 | event_pipeline                   | keyword | Steps used for indexing the result | `CertStream`                |
 | l9fp                             | keyword | LeakIX's fingerprint               |                             |
@@ -77,9 +80,8 @@ Global fields are available in both the [service](/docs/getting-started/#service
 
 Leak fields are only available in the [leak](/docs/getting-started/#leak) scope.
 
-
 | Field                        | Type    | Description                           | Example            |
-|------------------------------|---------|---------------------------------------|--------------------|
+| ---------------------------- | ------- | ------------------------------------- | ------------------ |
 | creation_date                | date    | Leak first detection date             | `2023-01-01`       |
 | update_date                  | date    | Leak last detection date              | `2023-01-01`       |
 | age                          | integer | Number of days the leak has been open |

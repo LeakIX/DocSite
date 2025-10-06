@@ -1,5 +1,5 @@
 ---
-title: "Query"
+title: 'Query'
 weight: 2
 ---
 

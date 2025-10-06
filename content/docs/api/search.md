@@ -1,19 +1,19 @@
 ---
-title: "Search"
+title: 'Search'
 weight: 3
 description: >
   Search API endpoint documentation.
 ---
 
-
-The search endpoint allows you to search for results in the index and get results as endpoint.
+The search endpoint allows you to search for results in the index and get
+results as endpoint.
 
 ## GET /search
 
 ### Parameters
 
 | name    | placement     | comment                                                   |
-|---------|---------------|-----------------------------------------------------------|
+| ------- | ------------- | --------------------------------------------------------- |
 | accept  | header        | Must be set to `application/json`                         |
 | api-key | header        | Your API key                                              |
 | scope   | url parameter | Must be either `service` or `leak`                        |
@@ -28,7 +28,8 @@ curl -H 'accept: application/json' "https://leakix.net/search?scope=leak&page=0&
 
 ### Successful response
 
-Receiving `200` means the request was successful and array of [l9events](/docs/api/l9format/#l9event-schema) is returned :  
+Receiving `200` means the request was successful and array of
+[l9events](/docs/api/l9format/#l9event-schema) is returned :
 
 ```json
 [
@@ -51,11 +52,7 @@ Receiving `200` means the request was successful and array of [l9events](/docs/a
     "port": "443",
     "mac": "",
     "vendor": "",
-    "transport": [
-      "tcp",
-      "tls",
-      "http"
-    ],
+    "transport": ["tcp", "tls", "http"],
     "protocol": "https",
     "http": {
       "root": "",
@@ -155,9 +152,11 @@ Receiving `200` means the request was successful and array of [l9events](/docs/a
 
 All requests to LeakIX.net's API are limited at ~1 request per second.
 
-If the limit is reached, the API will return a `429` http status code and a `x-limited-for` header.
+If the limit is reached, the API will return a `429` http status code and a
+`x-limited-for` header.
 
-The client MUST wait for the duration of `x-limited-for` before the next request.
+The client MUST wait for the duration of `x-limited-for` before the next
+request.
 
 ```http request
 HTTP/1.1 429 Rate-limited

@@ -1,18 +1,19 @@
 ---
-title: "Hooks"
+title: 'Hooks'
 weight: 8
 description: >
   Receiving hooks
 ---
 
-Our platform also allows you to [configure alerts](/docs/user/alerting) for your resources, allowing you to receive updates in real-time. 
+Our platform also allows you to [configure alerts](/docs/user/alerting) for your
+resources, allowing you to receive updates in real-time.
 
-In this document, we will provide you with a guide for setting up and using `HTTP hooks` in order to receive alerts 
-on your own endpoint and integrate it within your own system.
+In this document, we will provide you with a guide for setting up and using
+`HTTP hooks` in order to receive alerts on your own endpoint and integrate it
+within your own system.
 
-{{< tip "warning" >}}
-Alerting is available for pro users only. See our various [plans](https://leakix.net/plans) to get access.
-{{< /tip >}}
+{{< tip "warning" >}} Alerting is available for pro users only. See our various
+[plans](https://leakix.net/plans) to get access. {{< /tip >}}
 
 ## Configure the hook
 
@@ -21,14 +22,14 @@ You will then be taken to a page where you can configure the hook.
 
 ![diy](/images/api/hook.png)
 
-
-
 ## Receiving Alerts through Hooks
 
-Once you have configured the hook, you will be able to receive alerts on your own endpoint. 
-Every alert dispatched will be sent as a POST request containing an [l9event](/docs/api/l9format) JSON document.
+Once you have configured the hook, you will be able to receive alerts on your
+own endpoint. Every alert dispatched will be sent as a POST request containing
+an [l9event](/docs/api/l9format) JSON document.
 
-You can also specify the severity of the alerts, allowing you to receive updates in real-time. 
+You can also specify the severity of the alerts, allowing you to receive updates
+in real-time.
 
 ## Example hook
 

@@ -1,5 +1,5 @@
 ---
-title: "LeakIX Docs"
+title: 'LeakIX Docs'
 weight: 1
 ---
 
@@ -9,5 +9,3 @@ These docs consist of the following parts:
 2. [API](/docs/api)
 3. [User](/docs/user)
 4. Reporting (Coming soon)
-
-
