@@ -1,0 +1,334 @@
+// Documentation Layout and Sidebar Styles
+
+.docs-layout {
+  display: flex;
+  min-height: calc(100vh - 200px);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+// Documentation Sidebar
+.docs-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background-color: var(--theme-bg-card);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius-lg);
+  padding: 1.5rem;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    position: relative;
+    max-height: none;
+  }
+
+  // Sidebar header with toggle button
+  .sidebar-header {
+    display: none;
+    margin-bottom: 1rem;
+
+    @media (max-width: 992px) {
+      display: block;
+    }
+
+    .sidebar-toggle {
+      background: var(--theme-accent);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--theme-radius-md);
+      color: var(--theme-text-dark);
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: var(--theme-transition-normal);
+
+      &:hover {
+        background: var(--theme-primary);
+      }
+
+      .hamburger {
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        position: relative;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background: currentColor;
+          left: 0;
+        }
+
+        &::before {
+          top: -6px;
+        }
+
+        &::after {
+          bottom: -6px;
+        }
+      }
+    }
+  }
+
+  // Sidebar section
+  .sidebar-section {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .sidebar-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--theme-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--theme-transition-normal);
+
+      &:hover {
+        color: var(--theme-accent);
+      }
+    }
+
+    &.active {
+      color: var(--theme-accent);
+    }
+  }
+
+  // Sidebar menu
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--theme-border);
+  }
+
+  .sidebar-menu-item {
+    margin-bottom: 0.5rem;
+
+    a {
+      color: var(--theme-text-light);
+      text-decoration: none;
+      display: block;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--theme-radius-sm);
+      transition: var(--theme-transition-normal);
+      font-size: 0.9rem;
+
+      &:hover {
+        color: var(--theme-accent);
+        background-color: rgba(250, 183, 65, 0.1);
+        transform: translateX(2px);
+      }
+    }
+
+    &.active > a {
+      color: var(--theme-accent);
+      background-color: rgba(250, 183, 65, 0.15);
+      font-weight: 500;
+      border-left: 3px solid var(--theme-accent);
+      padding-left: calc(0.75rem - 3px);
+    }
+  }
+
+  // Table of contents in sidebar
+  .sidebar-toc {
+    margin-top: 0.5rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--theme-border);
+
+    nav {
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.25rem 0;
+
+      li {
+        margin: 0.25rem 0;
+
+        a {
+          color: var(--theme-text-light);
+          font-size: 0.85rem;
+          padding: 0.25rem 0.5rem;
+
+          &:hover {
+            color: var(--theme-accent);
+          }
+        }
+      }
+
+      // Nested TOC items
+      ul {
+        padding-left: 1rem;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--theme-bg-dark);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--theme-border);
+    border-radius: 3px;
+
+    &:hover {
+      background: var(--theme-accent);
+    }
+  }
+}
+
+// Documentation Main Content
+.docs-main {
+  flex: 1;
+  min-width: 0;
+  max-width: 800px;
+}
+
+.docs-content {
+  background-color: var(--theme-bg-card);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius-lg);
+  padding: 2.5rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.docs-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--theme-border);
+}
+
+.docs-title {
+  color: var(--theme-text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.docs-description {
+  color: var(--theme-text-light);
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+// Documentation navigation footer
+.docs-nav-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--theme-border);
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-nav-prev,
+  .docs-nav-next {
+    .nav-link {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      background-color: var(--theme-bg-dark);
+      border: 1px solid var(--theme-border);
+      border-radius: var(--theme-radius-md);
+      text-decoration: none;
+      transition: var(--theme-transition-normal);
+
+      &:hover {
+        background-color: var(--theme-bg-light);
+        border-color: var(--theme-accent);
+        transform: translateY(-2px);
+      }
+
+      .nav-label {
+        color: var(--theme-text-light);
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-title {
+        color: var(--theme-text);
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .docs-nav-next {
+    .nav-link {
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+}
+
+// Mobile sidebar toggle behavior
+@media (max-width: 992px) {
+  .docs-sidebar {
+    .sidebar-section,
+    .sidebar-menu {
+      display: none;
+    }
+
+    &.sidebar-open {
+      .sidebar-section,
+      .sidebar-menu {
+        display: block;
+      }
+    }
+  }
+}

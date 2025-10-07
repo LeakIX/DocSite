@@ -1,0 +1,40 @@
+<aside class="docs-sidebar">
+  <div class="sidebar-header">
+    <button class="sidebar-toggle" aria-label="Toggle documentation menu">
+      <span class="hamburger"></span>
+    </button>
+  </div>
+  {{- template "tree" (dict "page" . "section" .FirstSection) }}
+  {{- define "tree" }}
+  {{- $section := .section }}
+  {{- $page := .page }}
+  {{- $permalink := $page.RelPermalink }}
+  <nav class="sidebar-section">
+    <h2 class="sidebar-section-title{{ if eq $section.RelPermalink $permalink }} active{{ end }}">
+      <a href="{{ $section.Permalink }}">{{ $section.Title }}</a>
+    </h2>
+    {{- $pages := $section.Pages }}
+    {{- with $pages }}
+    <ul class="sidebar-menu" id="menu-{{ anchorize $section.Title }}">
+      {{- range . }}
+      {{- if .IsPage }}
+      <li class="sidebar-menu-item{{ if eq .RelPermalink $permalink }} active{{ end }}">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- if eq .RelPermalink $permalink }}
+        {{- $toc_id := printf "toc-%s" (replace (urlize .Title) "." "-") }}
+        {{- if ne (print .TableOfContents) "" }}
+        <div class="sidebar-toc">
+          {{- safeHTML (replace .TableOfContents "TableOfContents" $toc_id) }}
+        </div>
+        {{- end }}
+        {{- end }}
+      </li>
+      {{- else }}
+      {{- template "tree" (dict "page" $page "section" .) }}
+      {{- end }}
+      {{- end }}
+    </ul>
+    {{- end }}
+  </nav>
+  {{- end }}
+</aside>

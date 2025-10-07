@@ -1,0 +1,48 @@
+{{ define "head" }}
+  {{ $docsCSS := resources.Get "scss/docs.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $docsCSS.RelPermalink }}" />
+{{ end }}
+
+{{ define "scripts" }}
+  <script src="{{ "js/docs-sidebar.js" | relURL }}"></script>
+{{ end }}
+
+{{ define "main" }}
+  <div class="docs-layout">
+    {{ partial "docs-sidebar.html" . }}
+
+    <main class="docs-main">
+      <article class="docs-content">
+        <header class="docs-header">
+          <h1 class="docs-title">{{ .Title }}</h1>
+          {{ if .Description }}
+            <p class="docs-description">{{ .Description }}</p>
+          {{ end }}
+        </header>
+
+        <div class="content-wrapper">
+          {{ .Content }}
+        </div>
+
+        <nav class="docs-nav-footer">
+          <div class="docs-nav-prev">
+            {{ if .PrevInSection }}
+              <a href="{{ .PrevInSection.Permalink }}" class="nav-link">
+                <span class="nav-label">← Previous</span>
+                <span class="nav-title">{{ .PrevInSection.Title }}</span>
+              </a>
+            {{ end }}
+          </div>
+          <div class="docs-nav-next">
+            {{ if .NextInSection }}
+              <a href="{{ .NextInSection.Permalink }}" class="nav-link">
+                <span class="nav-label">Next →</span>
+                <span class="nav-title">{{ .NextInSection.Title }}</span>
+              </a>
+            {{ end }}
+          </div>
+        </nav>
+      </article>
+    </main>
+  </div>
+{{ end }}
