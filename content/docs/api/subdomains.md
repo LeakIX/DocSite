@@ -1,5 +1,5 @@
 ---
-title: "Subdomains"
+title: 'Subdomains'
 weight: 6
 description: >
   Subdomains API documentation.
@@ -7,20 +7,18 @@ description: >
 
 The subdomain endpoint allows you to find subdomains for a given domain.
 
-{{< tip >}}
-Registered and pro users are getting more results. See our various [plans](https://leakix.net/plans) to get access.
-{{< /tip >}}
+{{< tip >}} Registered and pro users are getting more results. See our various
+[plans](https://leakix.net/plans) to get access. {{< /tip >}}
 
 ## GET /api/subdomains/:domain
 
 ### Parameters
 
 | name    | placement | comment                           |
-|---------|-----------|-----------------------------------|
+| ------- | --------- | --------------------------------- |
 | accept  | header    | Must be set to `application/json` |
 | api-key | header    | Your API key                      |
 | domain  | url path  | Must contain the domain           |
-
 
 ### Curl example
 
@@ -30,7 +28,8 @@ curl -H 'accept: application/json' "https://leakix.net/api/subdomains/leakix.net
 
 ### Successful response
 
-Receiving `200` means the request was successful and a JSON array for subdomains is returned :
+Receiving `200` means the request was successful and a JSON array for subdomains
+is returned :
 
 ```json
 [
@@ -71,9 +70,11 @@ Receiving `200` means the request was successful and a JSON array for subdomains
 
 All requests to LeakIX.net's API are limited at ~1 request per second.
 
-If the limit is reached, the API will return a `429` http status code and a `x-limited-for` header.
+If the limit is reached, the API will return a `429` http status code and a
+`x-limited-for` header.
 
-The client MUST wait for the duration of `x-limited-for` before the next request.
+The client MUST wait for the duration of `x-limited-for` before the next
+request.
 
 ```http request
 HTTP/1.1 429 Rate-limited

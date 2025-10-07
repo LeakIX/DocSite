@@ -1,16 +1,17 @@
 ---
-title: "Authentication"
+title: 'Authentication'
 weight: 2
 description: >
   How to authenticate on LeakIX's API.
 ---
 
-
-API authentication is done by providing the `api-key` http header on your requests.
+API authentication is done by providing the `api-key` http header on your
+requests.
 
 ## Generating my key
 
-You can [find](https://leakix.net/settings/api) your API key in your profile under `Settings > API key` :
+You can [find](https://leakix.net/settings/api) your API key in your profile
+under `Settings > API key` :
 
 ![diy](/images/api/genkey.png)
 

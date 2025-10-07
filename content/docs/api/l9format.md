@@ -1,11 +1,12 @@
 ---
-title: "l9format"
+title: 'l9format'
 weight: 2
 description: >
   l9format documentation.
 ---
 
-l9format is a schema declaration targeted at interoperability between network recon tools used at LeakIX. 
+l9format is a schema declaration targeted at interoperability between network
+recon tools used at LeakIX.
 
 It is the default format returned by our API and various tools.
 
@@ -17,12 +18,7 @@ Its definition can be found on [GitHub](https://github.com/LeakIX/l9format/).
 {
   "event_type": "leak",
   "event_source": "DotEnvConfigPlugin",
-  "event_pipeline": [
-    "ip4scout",
-    "l9tcpid",
-    "l9explore",
-    "DotEnvConfigPlugin"
-  ],
+  "event_pipeline": ["ip4scout", "l9tcpid", "l9explore", "DotEnvConfigPlugin"],
   "event_fingerprint": "ab2848eed8451d0ea0d48a691126d1aeab2848eed8451d0ea0d48a691126d1ae",
   "ip": "127.0.0.1",
   "host": "site1.example.com",
@@ -30,11 +26,7 @@ Its definition can be found on [GitHub](https://github.com/LeakIX/l9format/).
   "port": "8080",
   "mac": "",
   "vendor": "",
-  "transport": [
-    "tcp",
-    "tls",
-    "http"
-  ],
+  "transport": ["tcp", "tls", "http"],
   "protocol": "https",
   "http": {
     "root": "/site1",
@@ -58,10 +50,7 @@ Its definition can be found on [GitHub](https://github.com/LeakIX/l9format/).
     "version": "TLSv1.3",
     "certificate": {
       "cn": "example.com",
-      "domain": [
-        "site.example.com",
-        "admin.example.com"
-      ],
+      "domain": ["site.example.com", "admin.example.com"],
       "fingerprint": "e998e371dd4678c9113e196bc5e4a5e901455750c6dbc9985c84403b91055260",
       "key_algo": "RSA",
       "key_size": 2048,
@@ -109,16 +98,10 @@ Its definition can be found on [GitHub](https://github.com/LeakIX/l9format/).
       "size": 13223,
       "collections": 1,
       "infected": false,
-      "ransom_notes": [
-        "Do this",
-        "Don't do that",
-        "We love GDPR"
-      ]
+      "ransom_notes": ["Do this", "Don't do that", "We love GDPR"]
     }
   },
-  "tags": [
-    "plc"
-  ],
+  "tags": ["plc"],
   "geoip": {
     "continent_name": "",
     "region_iso_code": "",
