@@ -44,3 +44,7 @@ We provide and support two official clients: Python and Go.
 
 - Go: https://github.com/LeakIX/LeakIXClient
 - Python client: https://github.com/LeakIX/LeakIXClient-Python
+
+#### Third-party Clients
+
+- **LeakPy** (Unofficial): A third-party Python client with CLI support - [GitHub](https://github.com/Chocapikk/LeakPy) | [Documentation](https://leakpy.readthedocs.io/en/latest/)
