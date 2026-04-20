@@ -1,0 +1,4 @@
+{
+  "name": "ElasticSearchOpenPlugin",
+  "description": "Checks for open Elasticsearch instances"
+}

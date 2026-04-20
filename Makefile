@@ -1,6 +1,6 @@
 .PHONY: help prettify check-prettify fix-trailing-whitespace \
 	check-trailing-whitespace build serve test install-deps \
-	clean lint-shell check-examples-python
+	clean lint-shell check-examples-python check-examples-json
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -80,12 +80,19 @@ check-examples-python: ## Check Python examples syntax
 	done
 	@echo "Python examples OK!"
 
+check-examples-json: ## Validate JSON example files
+	@echo "Validating JSON examples..."
+	@find examples -name '*.json' -exec \
+		python3 -m json.tool {} > /dev/null \; || exit 1
+	@echo "JSON examples OK!"
+
 test: ## Run all checks
 	@echo "Running all checks..."
 	@$(MAKE) check-trailing-whitespace
 	@$(MAKE) check-prettify
 	@$(MAKE) lint-shell
 	@$(MAKE) check-examples-python
+	@$(MAKE) check-examples-json
 	@$(MAKE) build
 	@echo "All checks passed!"
 
