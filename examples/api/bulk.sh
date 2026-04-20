@@ -2,6 +2,8 @@
 API_KEY="YOUR_API_KEY"
 QUERY='+plugin:"ElasticSearchOpenPlugin"'
 
-curl -H "api-key: ${API_KEY}" \
-  "https://leakix.net/bulk/search?q=$(printf '%s' "${QUERY}" | jq -sRr @uri)" \
-  -o results.json
+curl -G \
+  -H "api-key: ${API_KEY}" \
+  --data-urlencode "q=${QUERY}" \
+  -o results.json \
+  "https://leakix.net/bulk/search"

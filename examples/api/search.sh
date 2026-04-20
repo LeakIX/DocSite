@@ -2,6 +2,10 @@
 API_KEY="YOUR_API_KEY"
 QUERY="+plugin:HttpNTLM +country:France"
 
-curl -H "api-key: ${API_KEY}" \
+curl -G \
+  -H "api-key: ${API_KEY}" \
   -H 'accept: application/json' \
-  "https://leakix.net/search?scope=leak&page=0&q=$(printf '%s' "${QUERY}" | jq -sRr @uri)"
+  --data-urlencode "q=${QUERY}" \
+  --data-urlencode "scope=leak" \
+  --data-urlencode "page=0" \
+  "https://leakix.net/search"
