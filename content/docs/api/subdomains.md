@@ -37,40 +37,7 @@ The subdomain endpoint allows you to find subdomains for a given domain.
 Receiving `200` means the request was successful and a JSON array for subdomains
 is returned :
 
-```json
-[
-  {
-    "subdomain": "www.leakix.net",
-    "distinct_ips": 1,
-    "last_seen": "2023-01-20T11:25:41.243Z"
-  },
-  {
-    "subdomain": "staging.leakix.net",
-    "distinct_ips": 1,
-    "last_seen": "2023-01-20T11:23:03.404Z"
-  },
-  {
-    "subdomain": "blog.leakix.net",
-    "distinct_ips": 1,
-    "last_seen": "2021-05-13T06:43:31.441Z"
-  },
-  {
-    "subdomain": "checkout.leakix.net",
-    "distinct_ips": 1,
-    "last_seen": "2022-09-20T14:05:28.251Z"
-  },
-  {
-    "subdomain": "cftest.leakix.net",
-    "distinct_ips": 1,
-    "last_seen": "2023-01-20T11:26:07.057Z"
-  },
-  {
-    "subdomain": "scan.leakix.net",
-    "distinct_ips": 1,
-    "last_seen": "2023-02-23T11:23:57.141Z"
-  }
-]
-```
+{{< include-code "examples/api/responses/subdomains_response.json" "json" >}}
 
 ### Rate limiting
 

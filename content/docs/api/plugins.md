@@ -35,24 +35,7 @@ Returns a list of all available plugins with their event counts.
 Receiving `200` means the request was successful and an array of plugins is
 returned:
 
-```json
-[
-  {
-    "name": "DotDsStoreOpenPlugin",
-    "description": "Checks for publicly accessible .DS_Store files",
-    "event_count24h": 1234,
-    "event_count7d": 8765,
-    "event_count1h": 56
-  },
-  {
-    "name": "ElasticSearchOpenPlugin",
-    "description": "Checks for open Elasticsearch instances",
-    "event_count24h": 567,
-    "event_count7d": 3456,
-    "event_count1h": 23
-  }
-]
-```
+{{< include-code "examples/api/responses/plugins_list_response.json" "json" >}}
 
 | field          | type   | description                              |
 | -------------- | ------ | ---------------------------------------- |
@@ -89,20 +72,13 @@ Returns details about a specific plugin.
 
 Receiving `200` means the request was successful:
 
-```json
-{
-  "name": "ElasticSearchOpenPlugin",
-  "description": "Checks for open Elasticsearch instances"
-}
-```
+{{< include-code "examples/api/responses/plugins_detail_response.json" "json" >}}
 
 ### Error response
 
 Receiving `404` means the plugin was not found:
 
-```json
-"Plugin not found"
-```
+{{< include-code "examples/api/responses/plugins_not_found.json" "json" >}}
 
 ### Rate limiting
 

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "DotDsStoreOpenPlugin",
+    "description": "Checks for publicly accessible .DS_Store files",
+    "event_count24h": 1234,
+    "event_count7d": 8765,
+    "event_count1h": 56
+  },
+  {
+    "name": "ElasticSearchOpenPlugin",
+    "description": "Checks for open Elasticsearch instances",
+    "event_count24h": 567,
+    "event_count7d": 3456,
+    "event_count1h": 23
+  }
+]
