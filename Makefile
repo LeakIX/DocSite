@@ -1,4 +1,6 @@
-.PHONY: help prettify check-prettify fix-trailing-whitespace check-trailing-whitespace build serve test install-deps clean
+.PHONY: help prettify check-prettify fix-trailing-whitespace \
+	check-trailing-whitespace build serve test install-deps \
+	clean lint-shell check-examples-python
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -66,12 +68,26 @@ serve: ## Serve the site locally
 	@echo "Starting Hugo server..."
 	@hugo server --buildDrafts --disableFastRender
 
+lint-shell: ## Lint shell scripts using shellcheck
+	@echo "Linting shell scripts..."
+	@shellcheck examples/**/*.sh
+	@echo "Shell scripts OK!"
+
+check-examples-python: ## Check Python examples syntax
+	@echo "Checking Python example syntax..."
+	@for f in examples/**/*.py; do \
+		python3 -m py_compile "$$f" || exit 1; \
+	done
+	@echo "Python examples OK!"
+
 test: ## Run all checks
 	@echo "Running all checks..."
 	@$(MAKE) check-trailing-whitespace
 	@$(MAKE) check-prettify
+	@$(MAKE) lint-shell
+	@$(MAKE) check-examples-python
 	@$(MAKE) build
-	@echo "✓ All checks passed!"
+	@echo "All checks passed!"
 
 install-deps: ## Install npm dependencies
 	@echo "Installing dependencies..."

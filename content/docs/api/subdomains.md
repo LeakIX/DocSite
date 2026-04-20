@@ -20,11 +20,17 @@ The subdomain endpoint allows you to find subdomains for a given domain.
 | api-key | header    | Your API key                      |
 | domain  | url path  | Must contain the domain           |
 
-### Curl example
+### Example
 
-```sh
-curl -H 'accept: application/json' "https://leakix.net/api/subdomains/leakix.net"
-```
+{{< tabs "subdomains-example" >}}
+
+{{< tab "Curl" >}} {{< include-code "examples/api/subdomains.sh" "sh" >}}
+{{< /tab >}}
+
+{{< tab "Python" >}} {{< include-code "examples/api/subdomains.py" "python" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
 
 ### Successful response
 

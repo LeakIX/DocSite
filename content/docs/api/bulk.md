@@ -20,24 +20,16 @@ paging.
 | api-key | header        | Your API key                                              |
 | q       | url parameter | Must be an url encoded [search query](/docs/query/syntax) |
 
-### wget example
+### Example
 
-```sh
-wget --header="api-key: your-api-key" "https://leakix.net/bulk/search?q=searchquery" -O results.json
-```
+{{< tabs "bulk-example" >}}
 
-```
---2023-03-12 22:25:30--  https://leakix.net/
-Resolving leakix.net (leakix.net)... 157.90.211.37
-Connecting to leakix.net (leakix.net)|157.90.211.37|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Saving to: ‘results.json’
+{{< tab "Curl" >}} {{< include-code "examples/api/bulk.sh" "sh" >}} {{< /tab >}}
 
-results.json       100%[==========================================================>]  399MB  --.-KB/s    in 0.03s
+{{< tab "Python" >}} {{< include-code "examples/api/bulk.py" "python" >}}
+{{< /tab >}}
 
-2023-03-12 22:26:00 (10 MB/s) - ‘results.json’ saved [314572800/314572800]
-
-```
+{{< /tabs >}}
 
 ### Successful response
 

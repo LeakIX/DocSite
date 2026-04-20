@@ -17,11 +17,17 @@ The host details endpoint allows you to get information about a specific IP.
 | api-key | header    | Your API key                      |
 | ip      | url path  | Must contain the IP               |
 
-### Curl example
+### Example
 
-```sh
-curl -H 'accept: application/json' "https://leakix.net/host/157.90.211.37"
-```
+{{< tabs "host-example" >}}
+
+{{< tab "Curl" >}} {{< include-code "examples/api/hostdetails.sh" "sh" >}}
+{{< /tab >}}
+
+{{< tab "Python" >}} {{< include-code "examples/api/hostdetails.py" "python" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
 
 ### Successful response
 

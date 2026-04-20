@@ -18,11 +18,17 @@ domain and its subdomains.
 | api-key | header    | Your API key                      |
 | domain  | url path  | Must contain the domain           |
 
-### Curl example
+### Example
 
-```sh
-curl -H 'accept: application/json' "https://leakix.net/domain/leakix.net"
-```
+{{< tabs "domain-example" >}}
+
+{{< tab "Curl" >}} {{< include-code "examples/api/domain.sh" "sh" >}}
+{{< /tab >}}
+
+{{< tab "Python" >}} {{< include-code "examples/api/domain.py" "python" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
 
 ### Successful response
 

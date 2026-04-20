@@ -34,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.160.1
+      PYTHON_VERSION: '3.13'
+      LEAKIX_CLIENT_VERSION: '1.1.0'
       HUGO_ENVIRONMENT: production
       TZ: America/Los_Angeles
     steps:
@@ -63,6 +65,19 @@ jobs:
 
       - name: Check code formatting
         run: make check-prettify
+
+      - name: Lint shell examples
+        run: make lint-shell
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Check Python examples
+        run: |
+          pip install leakix>=${{ env.LEAKIX_CLIENT_VERSION }}
+          make check-examples-python
 
       - name: Cache Restore
         id: cache-restore
