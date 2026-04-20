@@ -2,40 +2,78 @@
 name: Build and Deploy
 
 on:
-  # Runs on pushes to any branch
   push:
-
-  # Runs on pull requests
   pull_request:
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: 'pages'
   cancel-in-progress: false
 
-# Default to bash
 defaults:
   run:
     shell: bash
 
+env:
+  HUGO_VERSION: 0.160.1
+  PYTHON_VERSION: '3.13'
+  LEAKIX_CLIENT_VERSION: '1.1.0'
+
 jobs:
-  # Build job
+  lint:
+    name: Lint and format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Node.js dependencies
+        run: make install-deps
+
+      - name: Check trailing whitespace
+        run: make check-trailing-whitespace
+
+      - name: Check code formatting
+        run: make check-prettify
+
+  shellcheck:
+    name: Shell examples
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Lint shell examples
+        run: make lint-shell
+
+  python:
+    name: Python examples
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install leakix client
+        run: pip install leakix>=${{ env.LEAKIX_CLIENT_VERSION }}
+
+      - name: Check Python examples
+        run: make check-examples-python
+
   build:
+    name: Build
+    needs: [lint, shellcheck, python]
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.160.1
-      PYTHON_VERSION: '3.13'
-      LEAKIX_CLIENT_VERSION: '1.1.0'
       HUGO_ENVIRONMENT: production
       TZ: America/Los_Angeles
     steps:
@@ -59,25 +97,6 @@ jobs:
 
       - name: Install Node.js dependencies
         run: make install-deps
-
-      - name: Check trailing whitespace
-        run: make check-trailing-whitespace
-
-      - name: Check code formatting
-        run: make check-prettify
-
-      - name: Lint shell examples
-        run: make lint-shell
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-
-      - name: Check Python examples
-        run: |
-          pip install leakix>=${{ env.LEAKIX_CLIENT_VERSION }}
-          make check-examples-python
 
       - name: Cache Restore
         id: cache-restore
@@ -106,7 +125,6 @@ jobs:
         with:
           path: ./public
 
-  # Deployment job
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     environment:
