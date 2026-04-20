@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-curl -H 'api-key: YOUR_API_KEY' \
+API_KEY="YOUR_API_KEY"
+IP="157.90.211.37"
+
+curl -H "api-key: ${API_KEY}" \
   -H 'accept: application/json' \
-  "https://leakix.net/host/157.90.211.37"
+  "https://leakix.net/host/${IP}"

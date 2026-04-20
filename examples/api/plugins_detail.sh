@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
-curl -H 'accept: application/json' \
-  "https://leakix.net/api/plugins/ElasticSearchOpenPlugin"
+API_KEY="YOUR_API_KEY"
+PLUGIN="ElasticSearchOpenPlugin"
+
+curl -H "api-key: ${API_KEY}" \
+  -H 'accept: application/json' \
+  "https://leakix.net/api/plugins/${PLUGIN}"

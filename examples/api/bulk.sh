@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-curl -H 'api-key: YOUR_API_KEY' \
-  "https://leakix.net/bulk/search?q=searchquery" \
+API_KEY="YOUR_API_KEY"
+QUERY='+plugin:"ElasticSearchOpenPlugin"'
+
+curl -H "api-key: ${API_KEY}" \
+  "https://leakix.net/bulk/search?q=$(printf '%s' "${QUERY}" | jq -sRr @uri)" \
   -o results.json
