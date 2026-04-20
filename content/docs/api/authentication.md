@@ -15,19 +15,22 @@ under `Settings > API key` :
 
 ![diy](/images/api/genkey.png)
 
-## Example request
+## Python client
 
-### Using curl
+Install the official Python client (v1.1.0+):
 
 ```sh
-curl -H 'api-key: JuebfishpudseimEkCeojbynMakEryok?OggIartopgolsitCimeymsyoarHubci' -H 'accept: application/json' "https://leakix.net/domain/leakix.net"
+pip install leakix>=1.1.0
 ```
 
-### HTTP request
+## Example request
 
-```http request
-GET /domain/leakix.net HTTP/1.1
-Host: leakix.net
-api-key: JuebfishpudseimEkCeojbynMakEryok?OggIartopgolsitCimeymsyoarHubci
-Accept: application/json
-```
+{{< tabs "auth-example" >}}
+
+{{< tab "Curl" >}} {{< include-code "examples/api/authentication.sh" "sh" >}}
+{{< /tab >}}
+
+{{< tab "Python" >}}
+{{< include-code "examples/api/authentication.py" "python" >}} {{< /tab >}}
+
+{{< /tabs >}}

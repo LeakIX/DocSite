@@ -20,11 +20,17 @@ results as endpoint.
 | q       | url parameter | Must be an url encoded [search query](/docs/query/syntax) |
 | page    | url parameter | Indicates the page to start at, default is `0`            |
 
-### Curl example
+### Example
 
-```sh
-curl -H 'accept: application/json' "https://leakix.net/search?scope=leak&page=0&q=searchquery"
-```
+{{< tabs "search-example" >}}
+
+{{< tab "Curl" >}} {{< include-code "examples/api/search.sh" "sh" >}}
+{{< /tab >}}
+
+{{< tab "Python" >}} {{< include-code "examples/api/search.py" "python" >}}
+{{< /tab >}}
+
+{{< /tabs >}}
 
 ### Successful response
 

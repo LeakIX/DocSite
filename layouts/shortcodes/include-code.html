@@ -1,0 +1,1 @@
+{{ $file := .Get 0 }}{{ $lang := .Get 1 }}{{ $content := readFile $file }}{{ highlight $content $lang }}
